@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-color: #087096; /*  primary color */
+  --secondary-color: #008cba; /*  secondary color */
+  --tertiary-color: #a0a2a7; /*  secondary color */
 }
 
 @theme inline {
@@ -10,6 +13,9 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-primary: var(--primary-color);
+  --color-secondary: var(--secondary-color);
+  --color-tertiary: var(--tertiary-color);
 }
 
 @media (prefers-color-scheme: dark) {

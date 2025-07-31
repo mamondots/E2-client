@@ -1,0 +1,22 @@
+import Image from "next/image";
+import React from "react";
+import logo from "../../assets/logo/titaswebWhite.png";
+import { BsCartCheck } from "react-icons/bs";
+import ResponsiveSidBar from "./ResponsiveSidBar";
+const ResponsiveNav = () => {
+  return (
+    <div className="lg:hidden  w-full bg-primary Container flex items-center justify-between py-3">
+      <div className="text-white">
+        <ResponsiveSidBar />
+      </div>
+      <div className="">
+        <Image src={logo} alt="Logo" width={120} height={120} />
+      </div>
+      <div className="flex items-center justify-center w-8 h-8 border border-white rounded">
+        <BsCartCheck className="text-lg text-white font-bold" />
+      </div>
+    </div>
+  );
+};
+
+export default ResponsiveNav;

@@ -1,8 +1,8 @@
-import { Lato, Rajdhani, Fjalla_One, Poppins } from "next/font/google";
+import { Lato, Poppins, Roboto } from "next/font/google";
 
-export const rajdhani = Rajdhani({
+export const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
 });
 
@@ -12,11 +12,6 @@ export const lato = Lato({
   display: "swap",
 });
 
-export const fjallaOne = Fjalla_One({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
-});
 export const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "700", "900"],

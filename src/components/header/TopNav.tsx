@@ -6,6 +6,7 @@ import Image from "next/image";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { BiMap } from "react-icons/bi";
 import { LuUser } from "react-icons/lu";
+import Link from "next/link";
 
 const languages = [
   { code: "en", label: "English (UK)", flag: ukFlags },
@@ -74,7 +75,9 @@ const TopNav = () => {
             <p className="text-lg">
               <LuUser />
             </p>
-            <p className="hover:text-secondary duration-300">Login</p>
+            <Link href="/signIn">
+              <p className="hover:text-secondary duration-300">Login</p>
+            </Link>
             <p>/</p>
             <p className="hover:text-secondary duration-300">Register</p>
           </div>

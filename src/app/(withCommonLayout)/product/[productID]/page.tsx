@@ -98,7 +98,7 @@ const page = () => {
           </div>
 
           <div>
-            <AddBtn />
+            <AddBtn counterMainStyle="mt-8" />
           </div>
           <div className="w-full bg-primary hover:bg-secondary duration-300 cursor-pointer rounded text-white text-center py-1.5 mt-2">
             <button className="text-sm outline-none cursor-pointer">

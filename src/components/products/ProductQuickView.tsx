@@ -1,10 +1,10 @@
 "use client";
 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { Flame, Minus, Plus, Search } from "lucide-react";
+import AddBtn from "@/utilits/AddBtn";
+import { Flame, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 
 const ProductQuickView = ({ product }) => {
   const {
@@ -18,30 +18,6 @@ const ProductQuickView = ({ product }) => {
     size,
   } = product;
 
-  const [count, setCount] = useState(1);
-  const [isCartLoading, setIsCartLoading] = useState(false);
-
-  const handleIncrement = () => {
-    setCount((prev) => prev + 1);
-  };
-
-  const handleDecrement = () => {
-    setCount((prev) => (prev > 0 ? prev - 1 : 0));
-  };
-
-  const handleAddToCart = () => {
-    if (isCartLoading) return;
-    setIsCartLoading(true);
-    //     setTimeout(() => {
-    //       setIsCartLoading(false);
-    //       toast.success("Added to cart!", {
-    //         duration: 2000,
-    //         position: "top-right",
-    //       });
-
-    //     }, 1000); // Simulate API delay
-    //   };
-  };
   return (
     <Dialog>
       <DialogTrigger>
@@ -108,7 +84,7 @@ const ProductQuickView = ({ product }) => {
               </p>
             </div>
 
-            <div className="flex items-center gap-2 mt-3">
+            {/* <div className="flex items-center gap-2 mt-3">
               <div className="flex items-center justify-between border border-[#262629]/40 hover:border-primary/40 duration-300 rounded px-2 py-1 md:w-[45%] w-[30%]">
                 <p
                   onClick={handleDecrement}
@@ -136,7 +112,9 @@ const ProductQuickView = ({ product }) => {
                   )}
                 </button>
               </div>
-            </div>
+            </div> */}
+
+            <AddBtn counterMainStyle="mt-6" />
 
             <Link href="/checkout" className="w-full">
               <div className="bg-primary hover:bg-secondary duration-300 cursor-pointer rounded text-white text-center py-1.5 mt-2">

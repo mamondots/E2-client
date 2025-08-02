@@ -81,22 +81,22 @@ const Footer = () => {
           <h2 className="text-white text-base">Quick links</h2>
 
           <ul className="text-white/60 mt-4 flex flex-col gap-2 cursor-pointer text-sm">
-            <Link href="privacyPolicy">
+            <Link href="/privacy-policy">
               <li className="hover:ml-2 hover:text-primary duration-300 cursor-pointer">
                 Privacy Policy
               </li>
             </Link>
-            <Link href="/terms&Conditions">
+            <Link href="/terms-conditions">
               <li className="hover:ml-2 hover:text-primary duration-300 cursor-pointer">
                 Terms & Conditions
               </li>
             </Link>
-            <Link href="/returnPolicy">
+            <Link href="/return-policy">
               <li className="hover:ml-2 hover:text-primary duration-300 cursor-pointer">
                 Return Policy
               </li>
             </Link>
-            <Link href="/orderPolicy">
+            <Link href="/order-policy">
               <li className="hover:ml-2 hover:text-primary duration-300 cursor-pointer">
                 Order Policy
               </li>

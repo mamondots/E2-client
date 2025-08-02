@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { roboto } from "./font";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Multi Product Ecommerce",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <body className={`${roboto.className} antialiased`}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }

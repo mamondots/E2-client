@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 import logo from "../../assets/logo/titasweb.png";
 import Searchbar from "@/utilits/Searchbar";
-import { BsCartCheck } from "react-icons/bs";
+
+import SideCartbar from "@/utilits/SideCartbar";
 const CenterNav = () => {
   return (
     <div className="Container py-3 flex items-center justify-between">
@@ -15,9 +16,7 @@ const CenterNav = () => {
           <Searchbar />
         </div>
         <div className="lg:flex hidden  items-center gap-2 cursor-pointer">
-          <div className="flex items-center justify-center w-10 h-10 bg-secondary rounded-sm">
-            <BsCartCheck className="text-xl text-white font-bold" />
-          </div>
+          <SideCartbar />
           <div className="flex flex-col items-start">
             <p className="uppercase text-sm font-medium">shipping cart</p>
             <p className="text-sm font-medium text-secondary">

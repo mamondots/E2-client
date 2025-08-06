@@ -1,19 +1,15 @@
-"use client";
 import { Heart, RotateCcw, ShoppingBag } from "lucide-react";
-import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import ProductQuickView from "./ProductQuickView";
+import Image from "next/image";
 import Link from "next/link";
 import { TProduct } from "@/types";
-import toast from "react-hot-toast";
 
 interface productProps {
   product: TProduct;
 }
 
-const ProductCard: React.FC<productProps> = ({ product }) => {
-  const [isCartLoading, setIsCartLoading] = useState(false);
-  const [isWishLoading, setIsWishLoading] = useState(false);
+const RowProductCard: React.FC<productProps> = ({ product }) => {
   const {
     title,
     price,
@@ -23,33 +19,10 @@ const ProductCard: React.FC<productProps> = ({ product }) => {
     backViewImage,
     label,
     id,
-  } = product; // Destructure product properties as needed
-
-  const handleAddToCart = () => {
-    if (isCartLoading) return;
-    setIsCartLoading(true);
-    setTimeout(() => {
-      setIsCartLoading(false);
-      toast.success("Added to cart!", {
-        duration: 4000,
-        position: "top-right",
-      });
-    }, 1000); // Simulate API delay
-  };
-  const handleAddToWish = () => {
-    if (isWishLoading) return;
-    setIsWishLoading(true);
-    setTimeout(() => {
-      setIsWishLoading(false);
-      toast.success("Wishlist added!", {
-        duration: 4000,
-        position: "top-right",
-      });
-    }, 1000); // Simulate API delay
-  };
+  } = product;
   return (
-    <div className="border rounded-[2px] group cursor-pointer">
-      <div className="relative ">
+    <div className=" group cursor-pointer flex">
+      <div className="relative border">
         <Link href={`/product/${id}`}>
           <div className="lg:w-[280px] lg:h-[280px] ">
             <Image
@@ -81,7 +54,7 @@ const ProductCard: React.FC<productProps> = ({ product }) => {
         <ProductQuickView product={product} />
       </div>
 
-      <div className="p-4 flex flex-col  items-center justify-center text-center ">
+      <div className="p-4 ">
         <h2 className="xl:text-base text-sm font-medium text-primary group-hover:text-secondary duration-300 line-clamp-1 cursor-pointer">
           {title}
         </h2>
@@ -104,30 +77,15 @@ const ProductCard: React.FC<productProps> = ({ product }) => {
           )}
         </div>
 
-        <div className="flex items-center  gap-1 justify-center w-full mt-2">
-          <div
-            onClick={handleAddToWish}
-            className="w-8 h-8 flex items-center justify-center border border-primary/30 text-primary/60 rounded-[2px] hover:bg-secondary hover:text-white transition-colors duration-300 cursor-pointer"
-          >
-            {isWishLoading ? (
-              <div className="h-4 w-4 border-2 border-white  rounded-full animate-spin" />
-            ) : (
-              <Heart size={16} />
-            )}
+        <div className="flex items-center  gap-1  w-full mt-2">
+          <div className="w-8 h-8 flex items-center justify-center border border-primary/30 text-primary/60 rounded-[2px] hover:bg-secondary hover:text-white transition-colors duration-300 cursor-pointer">
+            <Heart size={16} />
           </div>
-          <div
-            onClick={handleAddToCart}
-            className="flex w-40 h-8 items-center justify-center gap-2 border border-primary/30 text-primary/60  rounded-[2px] hover:bg-secondary hover:text-white transition-colors duration-300 cursor-pointer"
-          >
+          <div className="flex w-40 h-8 items-center justify-center gap-2 border border-primary/30 text-primary/60  rounded-[2px] hover:bg-secondary hover:text-white transition-colors duration-300 cursor-pointer">
             <p>
               <ShoppingBag size={16} />
             </p>
-
-            {isCartLoading ? (
-              <span className="text-sm font-medium">cart adding...</span>
-            ) : (
-              <span className="uppercase text-sm font-medium">add to cart</span>
-            )}
+            <p className="uppercase text-sm font-medium">add to cart</p>
           </div>
           <div className="w-8 h-8 flex items-center justify-center border border-primary/30 text-primary/60 rounded-[2px] hover:bg-secondary hover:text-white transition-colors duration-300 cursor-pointer">
             <RotateCcw size={16} />
@@ -138,4 +96,4 @@ const ProductCard: React.FC<productProps> = ({ product }) => {
   );
 };
 
-export default ProductCard;
+export default RowProductCard;

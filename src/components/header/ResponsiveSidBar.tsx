@@ -6,7 +6,7 @@ const ResponsiveSidBar = () => {
   return (
     <Sheet>
       <SheetTrigger>
-        <Menu className="text-2xl" />
+        <Menu className="text-2xl cursor-pointer" />
       </SheetTrigger>
       <SheetContent side="left">
         <ResponsivCategoryBar />

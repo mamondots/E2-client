@@ -1,5 +1,5 @@
 import { cartList } from "@/api/cartApi";
-import Breadcrumb from "@/utilits/Breadcrumb";
+import PageSection from "@/utilits/PageSection";
 import { Trash } from "lucide-react";
 import { Metadata } from "next";
 import Image from "next/image";
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
+      <PageSection second="my cart" />
       <div className="Container w-full mx-auto xl:px-40 lg:px-15 md:px-20 mt-4">
-        <Breadcrumb title="cart" />
         <div className="hidden lg:block">
           <h2 className="font-medium md:text-2xl text-xl text-center py-8">
             Your Cart

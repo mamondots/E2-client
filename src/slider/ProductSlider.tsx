@@ -8,8 +8,13 @@ import "swiper/css";
 import "swiper/css/navigation";
 import ProductCard from "@/components/products/ProductCard";
 import { useWindowSize } from "@/hooks/useWindowSize";
+import { TProduct } from "@/types";
 
-const ProductSlider = ({ filteredProducts }) => {
+interface Props {
+  filteredProducts: TProduct[];
+}
+
+const ProductSlider: React.FC<Props> = ({ filteredProducts }) => {
   const windowWidth = useWindowSize();
   const swiperRef = useRef<SwiperClass | null>(null);
 

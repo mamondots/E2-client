@@ -1,12 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import logo from "../../assets/logo/titaswebWhite.png";
-import { BsCartCheck } from "react-icons/bs";
 import ResponsiveSidBar from "./ResponsiveSidBar";
 import SideCartbar from "@/utilits/SideCartbar";
 const ResponsiveNav = () => {
   return (
-    <div className="lg:hidden  w-full bg-primary Container flex items-center justify-between py-3">
+    <div className="lg:hidden fixed top-0 z-20  w-full bg-primary Container flex items-center justify-between py-3">
       <div className="text-white">
         <ResponsiveSidBar />
       </div>

@@ -1,6 +1,7 @@
 "use client";
 import { Minus, Plus } from "lucide-react";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
 interface AddBtnProps {
   counterBtn?: boolean;
@@ -22,6 +23,20 @@ const AddBtn: React.FC<AddBtnProps> = ({
 
   const handleDecrement = () => {
     setCount((prev) => (prev > 0 ? prev - 1 : 0));
+  };
+
+  const [isCartLoading, setIsCartLoading] = useState(false);
+
+  const handleAddToCart = () => {
+    if (isCartLoading) return;
+    setIsCartLoading(true);
+    setTimeout(() => {
+      setIsCartLoading(false);
+      toast.success("Added to cart!", {
+        duration: 4000,
+        position: "top-right",
+      });
+    }, 1000); // Simulate API delay
   };
   return (
     <div>
@@ -47,9 +62,16 @@ const AddBtn: React.FC<AddBtnProps> = ({
         )}
 
         {addcartBtn && (
-          <div className="w-full bg-primary hover:bg-secondary cursor-pointer duration-300 rounded text-white text-center py-1.5">
+          <div
+            onClick={handleAddToCart}
+            className="w-full bg-primary hover:bg-secondary cursor-pointer duration-300 rounded text-white text-center py-1.5"
+          >
             <button className="text-sm outline-none cursor-pointer">
-              Add To Cart
+              {isCartLoading ? (
+                <span>cart adding...</span>
+              ) : (
+                <span className="capitalize">add to cart</span>
+              )}
             </button>
           </div>
         )}

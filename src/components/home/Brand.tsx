@@ -11,20 +11,20 @@ import "swiper/css/navigation";
 import Image from "next/image";
 import { brandList } from "@/api/brandApi";
 const Brand = () => {
-  //   const windowWidth = useWindowSize();
+  const windowWidth = useWindowSize();
   const swiperRef = useRef<SwiperClass | null>(null);
 
-  //   const showCustomArrows =
-  //     (windowWidth >= 1024 && brandList.length > 7) ||
-  //     (windowWidth < 1024 && brandList.length > 3);
+  const showCustomArrows =
+    (windowWidth >= 1024 && brandList.length > 7) ||
+    (windowWidth < 1024 && brandList.length > 3);
   return (
     <section className="Container py-4 relative">
       <div className="border-l-2 border-secondary">
         <h2 className="font-semibold text-primary text-lg ml-2">OUR BRANDS</h2>
       </div>
-      {/* {showCustomArrows && (
+      {showCustomArrows && (
         <>
-          <div className="absolute  top-1/2  left-17 z-10 transform -translate-y-1/2">
+          <div className="absolute  top-1/2 mt-4  xl:left-17 lg:left-6 md:left-6 left-[6px] z-10 transform -translate-y-1/2">
             <button
               onClick={() => swiperRef.current?.slidePrev()}
               className="bg-white xl:p-1 rounded-full border border-[#262626]/40 shadow cursor-pointer"
@@ -32,7 +32,7 @@ const Brand = () => {
               <ChevronLeft />
             </button>
           </div>
-          <div className="absolute top-1/2 right-17 z-10 transform -translate-y-1/2">
+          <div className="absolute top-1/2 mt-4 xl:right-17 lg:right-6 md:right-6 right-[6px] z-10 transform -translate-y-1/2">
             <button
               onClick={() => swiperRef.current?.slideNext()}
               className="bg-white xl:p-1 rounded-full border border-[#262626]/40 shadow cursor-pointer"
@@ -41,7 +41,7 @@ const Brand = () => {
             </button>
           </div>
         </>
-      )} */}
+      )}
 
       <Swiper
         slidesPerView={2}

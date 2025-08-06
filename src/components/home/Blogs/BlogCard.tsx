@@ -6,8 +6,13 @@ import { BsArrowRight } from "react-icons/bs";
 import React from "react";
 
 import { UserRound } from "lucide-react";
+import { TBlog } from "@/types";
 
-const BlogCard = ({ blog }) => {
+interface Props {
+  blog: TBlog;
+}
+
+const BlogCard: React.FC<Props> = ({ blog }) => {
   return (
     // <Link href={`/blogs/${blog?.id}`} className="block">
     <Link href={`/blogs/${1}`} className="block">

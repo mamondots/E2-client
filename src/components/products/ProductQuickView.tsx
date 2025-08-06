@@ -1,12 +1,17 @@
 "use client";
 
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { TProduct } from "@/types";
 import AddBtn from "@/utilits/AddBtn";
 import { Flame, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-const ProductQuickView = ({ product }) => {
+interface productProps {
+  product: TProduct;
+}
+
+const ProductQuickView: React.FC<productProps> = ({ product }) => {
   const {
     title,
     price,
@@ -76,43 +81,13 @@ const ProductQuickView = ({ product }) => {
                 {size.map((item, index) => (
                   <span
                     key={index}
-                    className="border border-[#262629]/40 px-2 rounded text-sm capitalize cursor-pointer hover:border-primary/40 hover:text-primary duration-300"
+                    className="border border-[#262629]/40 hover:border-secondary hover:bg-secondary px-2 rounded text-sm capitalize cursor-pointer  hover:text-white duration-300"
                   >
                     {item}
                   </span>
                 ))}
               </p>
             </div>
-
-            {/* <div className="flex items-center gap-2 mt-3">
-              <div className="flex items-center justify-between border border-[#262629]/40 hover:border-primary/40 duration-300 rounded px-2 py-1 md:w-[45%] w-[30%]">
-                <p
-                  onClick={handleDecrement}
-                  className="cursor-pointer text-[#262629]/40 hover:text-primary/60 duration-300"
-                >
-                  <Plus size={16} />
-                </p>
-                <span>{count}</span>
-                <p
-                  onClick={handleIncrement}
-                  className="cursor-pointer text-[#262629]/40 hover:text-primary/60 duration-300"
-                >
-                  <Minus size={16} />
-                </p>
-              </div>
-              <div
-                onClick={handleAddToCart}
-                className="w-full bg-primary hover:bg-secondary cursor-pointer duration-300 rounded text-white text-center py-1.5"
-              >
-                <button className="text-sm outline-none cursor-pointer">
-                  {isCartLoading ? (
-                    <div className="h-4 w-4 border-2 border-white rounded-full animate-spin" />
-                  ) : (
-                    "Add to Cart"
-                  )}
-                </button>
-              </div>
-            </div> */}
 
             <AddBtn counterMainStyle="mt-6" />
 

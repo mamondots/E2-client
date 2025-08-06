@@ -4,11 +4,14 @@ import logo from "../../assets/logo/titasweb.png";
 import Searchbar from "@/utilits/Searchbar";
 
 import SideCartbar from "@/utilits/SideCartbar";
+import Link from "next/link";
 const CenterNav = () => {
   return (
     <div className="Container py-3 flex items-center justify-between">
       <div className="hidden lg:block">
-        <Image src={logo} alt="Logo" width={160} height={160} />
+        <Link href="/">
+          <Image src={logo} alt="Logo" width={160} height={160} />
+        </Link>
       </div>
 
       <div className="flex items-center gap-4 lg:w-auto w-full">

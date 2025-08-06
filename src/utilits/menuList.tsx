@@ -5,22 +5,22 @@ export const menuList = [
   },
   {
     title: "Shop",
-    link: "/product",
+    link: "/shop",
     subMenu: true,
   },
   {
     title: "under ৳500",
-    link: "/product",
+    link: "/under-price",
     subMenu: true,
   },
   {
     title: "new arrivals",
-    link: "/product",
+    link: "/new-arrivels",
     subMenu: true,
   },
   {
     title: "deals",
-    link: "/product",
+    link: "/deals",
     subMenu: true,
   },
   {

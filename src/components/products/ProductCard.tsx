@@ -82,9 +82,11 @@ const ProductCard: React.FC<productProps> = ({ product }) => {
       </div>
 
       <div className="p-4 flex flex-col  items-center justify-center text-center ">
-        <h2 className="xl:text-base text-sm font-medium text-primary group-hover:text-secondary duration-300 line-clamp-1 cursor-pointer">
-          {title}
-        </h2>
+        <Link href={`/product/${id}`}>
+          <h2 className="xl:text-base text-sm font-medium text-primary group-hover:text-secondary duration-300 line-clamp-1 cursor-pointer">
+            {title}
+          </h2>
+        </Link>
         <div>
           <span className="text-secondary/70 text-xl">
             {Array.from({ length: Math.floor(rating) }, (_, i) => (
